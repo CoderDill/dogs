@@ -15,6 +15,9 @@ function Routes({dogs}) {
                 <Route exact path="/dogs/:name">
                     <DogDetail dogs={dogs}/>
                 </Route>
+                <Route>
+                    <DogList dogs={dogs}/>
+                </Route>
             </Switch>
         </>
     )
