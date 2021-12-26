@@ -1,6 +1,7 @@
 
 import { Switch, Route } from 'react-router-dom'
 import DogList from './DogList'
+import DogDetail from './DogDetail'
 
 
 
@@ -12,7 +13,7 @@ function Routes({dogs}) {
                     <DogList dogs={dogs}/>
                 </Route>
                 <Route exact path="/dogs/:name">
-                    <DogDetail />
+                    <DogDetail dogs={dogs}/>
                 </Route>
             </Switch>
         </>
