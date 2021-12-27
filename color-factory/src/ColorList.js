@@ -1,12 +1,8 @@
 import { NavLink } from 'react-router-dom'
-import {useState} from 'react'
-
-
-
 
 function ColorList({colors}) {
     const colorsList = Object.keys(colors).map(color => (
-        <NavLink to={`colors/${color}`}>{color}</NavLink>
+        <NavLink key={color.name} to={`colors/${color}`}>{color}</NavLink>
     ))
     return (
         <>

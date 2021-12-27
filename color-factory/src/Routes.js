@@ -10,8 +10,13 @@ function Routes() {
     green: "#00FF00",
     blue: "#0000FF"
   };
+  const [colors, setColors] = useState(initialState);
 
-  const [colors ,setColors] = useState(initialState)
+  function handleAdd(newColorObj) {
+    setColors((prevColors) => ({ ...prevColors, ...newColorObj }));
+  }
+
+  
   return (
     <>
       <Switch>
@@ -19,10 +24,10 @@ function Routes() {
           <ColorList colors={colors}/>
         </Route>
         <Route exact path="/colors/new">
-          <NewColor />
+          <NewColor addColor={handleAdd}/>
         </Route>
-              <Route exact path="/colors/:color">
-                  <ColorPage />
+          <Route exact path="/colors/:color">
+          <ColorPage />
         </Route>
         <Redirect to="/colors" />
       </Switch>
